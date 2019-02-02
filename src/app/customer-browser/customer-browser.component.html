@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div col-3>
+        <select class="form-control" [(ngModel)]=customer>
+          <option [ngValue]="null">Wybierz</option>
+          <option *ngFor="let c of customers" [ngValue]="c">{{c.name}}</option>
+        </select>
+        <button class="btn btn-primary" (click)="changeColor()">Zmień kolor</button>
+      </div>
+    </div>
+    <hr />
+    <div *ngIf="customer">
+        <app-customer-details #details [customer]="customer" (shift)="onShift($event)"></app-customer-details>
+    </div>
+  </div>
+</div>

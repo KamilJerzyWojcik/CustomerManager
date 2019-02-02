@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-8">
+    <h1 class="card-title" [style.color]="nameColor" [class.isActive]="isActive">
+      <button type="button" (click)="left()">&lt;</button>
+      {{ customer.name.toUpperCase() }}
+      <ng-container [ngSwitch]="customer.type">
+        <ng-container *ngSwitchCase="CustomerType.Standard">*</ng-container>
+        <ng-container *ngSwitchCase="CustomerType.Premium">**</ng-container>
+        <ng-container *ngSwitchCase="CustomerType.VIP">***</ng-container>
+        <ng-container *ngSwitchDefault></ng-container>
+      </ng-container>
+      <button type="button" (click)="right()">&gt;</button>
+    </h1>
+    <p class="card-text">{{customer.description}}</p>
+    <p appHighlight class="card-text">Wiek: {{ customer.age }}</p>
+
+    <ul>
+      <li *ngFor="let category of customer.categories; let oddCategory = odd" [class.oddCategory]="oddCategory">{{oddCategory}}
+        {{category}}</li>
+    </ul>
+
+    <p class="card-text">Adres: {{customer.address.street}}, {{customer.address.houseNumber}},
+      {{customer.address.city}}</p>
+    <a href="#" class="btn btn-primary m-1" (click)="changeIsActive()" type="button">Przełącz
+      podreślenie</a>
+    <a href="#" class="btn btn-secondary m-1" (click)="changeColor()" type="button">Zmien kolor</a>
+  </div>
+
+  <div class="col-4">
+    <p>{{ counter }}</p>
+    <div class="form-checkbox">
+      <label>
+        <input type="checkbox" class="form-check-input" [(ngModel)]="showPhoto" /> Pokaż zdjęcie
+      </label>
+    </div>
+    <div *ngIf="showPhoto; then photo else noPhoto"></div>
+    <ng-template #photo>
+      <img [src]="customer.photoUrl" height="230" />
+    </ng-template>
+    <ng-template #noPhoto>
+      <p>Zdjecie ukryte</p>
+    </ng-template>
+  </div>
+</div>
