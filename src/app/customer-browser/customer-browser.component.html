@@ -7,6 +7,7 @@
           <option *ngFor="let c of customers" [ngValue]="c">{{c.name}}</option>
         </select>
         <button class="btn btn-primary" (click)="changeColor()">Zmień kolor</button>
+        <button class="btn btn-primary" (click)="delete()">Usuń klienta</button>
       </div>
     </div>
     <hr />

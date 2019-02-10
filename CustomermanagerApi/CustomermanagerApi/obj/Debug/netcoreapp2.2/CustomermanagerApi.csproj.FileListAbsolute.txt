@@ -1,0 +1,14 @@
+C:\Users\kamiljerzywojcik\Documents\repository\kurs helion\tutorialAngular\CustomerManager\CustomermanagerApi\CustomermanagerApi\obj\Debug\netcoreapp2.2\CustomermanagerApi.csprojAssemblyReference.cache
+C:\Users\kamiljerzywojcik\Documents\repository\kurs helion\tutorialAngular\CustomerManager\CustomermanagerApi\CustomermanagerApi\obj\Debug\netcoreapp2.2\CustomermanagerApi.csproj.CoreCompileInputs.cache
+C:\Users\kamiljerzywojcik\Documents\repository\kurs helion\tutorialAngular\CustomerManager\CustomermanagerApi\CustomermanagerApi\obj\Debug\netcoreapp2.2\CustomermanagerApi.RazorAssemblyInfo.cache
+C:\Users\kamiljerzywojcik\Documents\repository\kurs helion\tutorialAngular\CustomerManager\CustomermanagerApi\CustomermanagerApi\obj\Debug\netcoreapp2.2\CustomermanagerApi.RazorAssemblyInfo.cs
+C:\Users\kamiljerzywojcik\Documents\repository\kurs helion\tutorialAngular\CustomerManager\CustomermanagerApi\CustomermanagerApi\obj\Debug\netcoreapp2.2\CustomermanagerApi.AssemblyInfoInputs.cache
+C:\Users\kamiljerzywojcik\Documents\repository\kurs helion\tutorialAngular\CustomerManager\CustomermanagerApi\CustomermanagerApi\obj\Debug\netcoreapp2.2\CustomermanagerApi.AssemblyInfo.cs
+C:\Users\kamiljerzywojcik\Documents\repository\kurs helion\tutorialAngular\CustomerManager\CustomermanagerApi\CustomermanagerApi\bin\Debug\netcoreapp2.2\CustomermanagerApi.deps.json
+C:\Users\kamiljerzywojcik\Documents\repository\kurs helion\tutorialAngular\CustomerManager\CustomermanagerApi\CustomermanagerApi\bin\Debug\netcoreapp2.2\CustomermanagerApi.runtimeconfig.json
+C:\Users\kamiljerzywojcik\Documents\repository\kurs helion\tutorialAngular\CustomerManager\CustomermanagerApi\CustomermanagerApi\bin\Debug\netcoreapp2.2\CustomermanagerApi.runtimeconfig.dev.json
+C:\Users\kamiljerzywojcik\Documents\repository\kurs helion\tutorialAngular\CustomerManager\CustomermanagerApi\CustomermanagerApi\bin\Debug\netcoreapp2.2\CustomermanagerApi.dll
+C:\Users\kamiljerzywojcik\Documents\repository\kurs helion\tutorialAngular\CustomerManager\CustomermanagerApi\CustomermanagerApi\bin\Debug\netcoreapp2.2\CustomermanagerApi.pdb
+C:\Users\kamiljerzywojcik\Documents\repository\kurs helion\tutorialAngular\CustomerManager\CustomermanagerApi\CustomermanagerApi\obj\Debug\netcoreapp2.2\CustomermanagerApi.RazorTargetAssemblyInfo.cache
+C:\Users\kamiljerzywojcik\Documents\repository\kurs helion\tutorialAngular\CustomerManager\CustomermanagerApi\CustomermanagerApi\obj\Debug\netcoreapp2.2\CustomermanagerApi.dll
+C:\Users\kamiljerzywojcik\Documents\repository\kurs helion\tutorialAngular\CustomerManager\CustomermanagerApi\CustomermanagerApi\obj\Debug\netcoreapp2.2\CustomermanagerApi.pdb

@@ -1,4 +1,7 @@
+import { InjectionToken } from '@angular/core';
+
 export interface ICustomer {
+    id?: number;
     name: string;
     photoUrl: string;
     description: string;
@@ -19,3 +22,10 @@ export enum CustomerType {
     Premium,
     VIP
 }
+
+export interface Config {
+    customerLimit: number,
+    apiUrl: string
+}
+
+export const CONFIG = new InjectionToken<Config>('app.config');

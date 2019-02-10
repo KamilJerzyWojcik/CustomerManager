@@ -1,5 +1,7 @@
 import { Directive, ElementRef, HostListener } from '@angular/core';
 
+//ng generate directive highlight
+
 @Directive({
   selector: '[appHighlight]'
 })

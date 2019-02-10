@@ -7,7 +7,10 @@ import { Component,
   OnChanges,
   SimpleChanges } from '@angular/core';
 import { CustomerType, ICustomer } from '../model';
+import { CounterService } from '../counter.service';
+import { MessageService } from '../message.service';
 
+//ng generate component customer-details
 
 @Component({
   selector: 'app-customer-details',
@@ -29,7 +32,7 @@ export class CustomerDetailsComponent implements OnInit, OnDestroy, OnChanges {
   CustomerType = CustomerType;
 
 
-  constructor() {
+  constructor(private counterService: CounterService, private message: MessageService) {
     setTimeout(() => {
       this.customer.categories.push("branza budowlana");
     }, 3000)
@@ -44,7 +47,7 @@ export class CustomerDetailsComponent implements OnInit, OnDestroy, OnChanges {
 
   ngOnInit() {
     console.log("powstanie komponentu details");
-
+    this.counterService.increase();
     //  setInterval(() => {
     //   this.counter++;
     // }, 1000);
@@ -58,9 +61,15 @@ export class CustomerDetailsComponent implements OnInit, OnDestroy, OnChanges {
   
   changeColor() {
     this.nameColor = this.nameColor === "blue" ? "red" : "blue";
+    
+  }
+
+  successNotification() {
+    this.message.success("Sukces!!");
   }
 
   changeIsActive() {
+
     this.isActive = !this.isActive;
   }
 

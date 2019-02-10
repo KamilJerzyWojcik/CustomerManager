@@ -33,6 +33,7 @@
         <input type="checkbox" class="form-check-input" [(ngModel)]="showPhoto" /> Pokaż zdjęcie
       </label>
     </div>
+    <button class="btn btn-success" (click)="successNotification()">Sukces!</button>
     <div *ngIf="showPhoto; then photo else noPhoto"></div>
     <ng-template #photo>
       <img [src]="customer.photoUrl" height="230" />

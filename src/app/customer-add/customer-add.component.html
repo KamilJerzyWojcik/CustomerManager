@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title">Dodaj Klienta</h3>
+    <form>
+      <div class="form-group">
+        <label for="name">Nazwa Klienta</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name">
+      </div>
+      <div class="form-group">
+        <label for="age">Wiek</label>
+        <input type="number" class="form-control" id="age" [(ngModel)]="age" name="age">
+      </div>
+      <div class="form-group">
+        <label for="type">Typ</label>
+        <select class="form-control" [(ngModel)]="type" name="type">
+          <option [value]="undefinied">Wybierz</option>
+          <option [value]="CustomerType.Standard">Standard</option>
+          <option [value]="CustomerType.Premium">Premium</option>
+          <option [value]="CustomerType.VIP">VIP</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-success" (click)="add()">Dodaj</button>
+    </form>
+  </div>
+</div>
+
+
+

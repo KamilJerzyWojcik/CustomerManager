@@ -1,6 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CustomerType, ICustomer } from '../model';
 import { CustomerDetailsComponent } from '../customer-details/customer-details.component';
+import { CustomerService } from '../customer.service';
+import { CounterService } from '../counter.service';
+import { MessageService } from '../message.service';
+
+//ng generate component customer-browser
 
 @Component({
   selector: 'app-customer-browser',
@@ -11,52 +16,19 @@ export class CustomerBrowserComponent implements OnInit {
 
 @ViewChild('details') detailsComponent: CustomerDetailsComponent;
 
-  customers: ICustomer[] = [{
-    name: "Józef Kwiatek",
-    photoUrl: "assets/images/customer2.png",
-    age: 34,
-    description: "very important client",
-    address: {
-      street: "Zielona",
-      houseNumber: 9,
-      city: "Warszawa"
-    },
-    type: CustomerType.VIP,
-    categories: ["zagraniczny", "mikroprzedsiębiorstwo", "duży obrót"]
-  },
-  {
-    name: "Andrzej Jeziorak",
-    photoUrl: "assets/images/customer3.png",
-    age: 51,
-    description: "Kluczowy klient",
-    address: {
-      street: "Fiołkowa",
-      houseNumber: 12,
-      city: "Poznań"
-    },
-    type: CustomerType.Premium,
-    categories: ["krajowy", "przedsiębiorstwo", "średni obrót"]
-  },
-  {
-    name: "Kazimierz Nowak",
-    photoUrl: "assets/images/customer.png",
-    age: 21,
-    description: "Niezbyt ważny klient",
-    address: {
-      street: "Bagenna",
-      houseNumber: 88,
-      city: "Gdańsk"
-    },
-    type: CustomerType.Standard,
-    categories: ["krajowy", "zielarstwo", "mikro obrót"]
-  },
-];
-
-  customer: ICustomer = this.customers[0];
+  customers: ICustomer[];
   
-  constructor() { }
+  customer: ICustomer;;
+  
+  constructor(
+    private customerService: CustomerService,
+    private counterService: CounterService,
+    private messageService: MessageService) {
+     }
 
   ngOnInit() {
+    this.refresh();
+    this.counterService.increase();
   }
 
   changeColor(){
@@ -72,6 +44,35 @@ export class CustomerBrowserComponent implements OnInit {
     if(direction == 'right' && index < this.customers.length - 1) {
       this.customer = this.customers[index + 1];
     }
+  }
+
+  delete(){
+    this.customerService.deleteCustomer(this.customer).subscribe(
+      () =>{ 
+        this.messageService.success("Udało się usunąć klienta");
+        this.refresh();
+      }//,
+      // error => { //zapewnione globalnie, error-handling.interceptor
+      //   console.log(error);
+      //   this.messageService.error("Błąd w połączeniu z serwerem");
+      // }
+    );
+  }
+
+  private refresh() {
+    this.customerService.getCustomers().subscribe(
+      result => {
+      console.log(result);
+      this.customers = result;
+      this.customer = this.customers[0];
+      this.messageService.success("Pobrano wszystkich klientów");
+     }//,
+    // error => { //zapewnione globalnie, error-handling.interceptor
+    //   console.log(error);
+    //   this.messageService.error("Nie udało się pobrać klientów");
+    // }
+
+    );
   }
 
 }
